@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar color="priary">
+      <ion-title>
+        Voters List
+      </ion-title>
+      <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+        <button ion-button end navPush="AddVoterPage"> 
+          <!--AddShoppingItemPage-->
+          <ion-icon name="add" end></ion-icon>
+        </button>
+      
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+  <ion-list>
+    <ion-list-header>
+      <ion-item *ngFor="let voter of voterList$ | async" >
+       
+       <!-- navPush='EditShoppingItemPage' [navParams]="{voter: voter}" -->
+       <ion-card>
+          <ion-card-header>
+              <ion-item>
+             <ion-icon name="contact" item-start></ion-icon>
+              {{voter.voterName}}
+              
+              <ion-icon name="cog" item-end navPush='EditVoterPage' [navParams]="{voter: voter}"></ion-icon>
+              <ion-icon name="close-circle" item-end (click)='deleteVoter(voter)'></ion-icon>
+              
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-icon name="card" item-start></ion-icon> 
+              {{voter.voterID}}
+            </ion-item>
+            <ion-item>
+                <ion-icon name="card" item-start></ion-icon> 
+              {{voter.adharID}}
+            </ion-item>
+            
+            <ion-item>
+                <ion-icon name="ribbon" item-start></ion-icon>
+              {{voter.voterRole}}
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+       
+        
+      </ion-item>
+    </ion-list-header>
+  </ion-list>
+  </ion-content>
+  

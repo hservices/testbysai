@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="priary">
+    <ion-title>
+      Shoping List
+    </ion-title>
+    <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+      <button ion-button end navPush="AddVoterPage"> 
+        <!--AddShoppingItemPage-->
+        <ion-icon name="add"></ion-icon>
+      </button>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+<ion-list>
+  <ion-list-header>
+    <ion-item *ngFor="let item of shoppingList$ | async" detail-push navPush='EditShoppingItemPage' [navParams]="{item: item}" >
+     
+     <!--(click)='presentActionSheet()'-->
+      {{item.name}}
+    </ion-item>
+  </ion-list-header>
+</ion-list>
+</ion-content>
