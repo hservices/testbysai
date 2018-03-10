@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,Pipe,PipeTransform } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 
 import { Change } from '@firebase/database/dist/esm/src/core/view/Change';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ActionSheetController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
-
+import { FormsModule } from '@angular/forms';
 import { VoterListService } from '../../services/voter-list/voter-list.service';
 import { Voter } from '../../models/voter/voter.model';
 
@@ -62,4 +62,6 @@ ionViewWillLoad() {
 }
  /*Displaying welcome messages ends*/
  
+
+
 }

@@ -1,3 +1,13 @@
 page-voter-list {
 
 }
+
+    ion-card:nth-of-type(even) {
+     background: rgb(102, 186, 241);
+    }
+    ion-card:nth-of-type(odd) {
+        background:rgb(117, 136, 241);
+       }
+       
+    
+   

@@ -4,25 +4,22 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>registration</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label floating>User email</ion-label>
+    <ion-title text-center>Registration</ion-title>
+    <img src="assets/imgs/registration.png"/>
+    <ion-item>
+    <ion-label floating color='dark'>User email</ion-label>
     <ion-input type="text" [(ngModel)]='user.email'></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label floating>Password</ion-label>
+    <ion-label floating color='dark'>Password</ion-label>
     <ion-input type="password" [(ngModel)]='user.password'></ion-input>
   </ion-item>
-  
-  <button ion-button (click)='register(user)'>Register</button>
+  <br>
+  <button ion-button block color='secondary'(click)='register(user)'>Register</button>
+  <button ion-button block color="light" navPush="LoginPage">Cancel</button> 
 </ion-content>

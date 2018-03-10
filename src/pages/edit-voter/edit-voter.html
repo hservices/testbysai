@@ -14,19 +14,19 @@
 
 
 <ion-content padding>
-    <ion-item>
-        <ion-label>Name</ion-label>
-        <ion-input [(ngModel)]="voter.voterName" placeholder="Name"></ion-input>
+    <ion-item >
+        <ion-label floating color='dark' >Name</ion-label>
+        <ion-input [(ngModel)]="voter.voterName" ></ion-input>
       </ion-item>
     
       <ion-item>
-          <ion-label>voterID</ion-label>
-          <ion-input [(ngModel)]='voter.voterID'type="text" laceholder="1"></ion-input>
+          <ion-label floating color='dark'>Voter ID</ion-label>
+          <ion-input [(ngModel)]='voter.voterID' type="text" ></ion-input>
         </ion-item>
     
         <ion-item>
-            <ion-label>adharID</ion-label>
-            <ion-input [(ngModel)]='voter.adharID' type="text" placeholder="700"></ion-input>
+            <ion-label floating color='dark' >Adhar ID</ion-label>
+            <ion-input [(ngModel)]='voter.adharID' type="text" ></ion-input>
         </ion-item>
     
     
@@ -56,5 +56,6 @@
             <ion-radio value="Candidate"></ion-radio>
           </ion-item>
         </ion-list>
-        <button ion-button block clear (click)="saveVoter(voter)">Save</button>
+        <button ion-button block color='secondary' (click)="saveVoter(voter)">Save</button>
+        <button ion-button block color="light" navPush="VoterListPage">Cancel</button> 
 </ion-content>
